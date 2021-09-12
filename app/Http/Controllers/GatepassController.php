@@ -84,12 +84,26 @@ class GatepassController extends Controller
     public function show($id)
     {
 
+      $data = DB::table('gatepasses')
+          ->join('products','products.gatepassID', '=', 'gatepasses.id')
+          ->select('gatepasses.gatepassNo','products.productName','products.quantity','products.purpose')
+          ->get($id);
+
+        $gatepass= Gatepass::where('id', $id)->first();
+        $product= Product::where('id', $id)->first()->toArray();
+
+        return view('gatepass.generategatepass',compact('data','gatepass','product'));
 
 
-        $gatepass = Gatepass::find($id);
+
+
+        //$gatepass = Gatepass::find($id);
+        // $product= Product::find($id);
         //$gatepass= Gatepass::where('id', $id)->first();
+        //$product= Product::where('id', $id)->first()->toArray();;
         //dd($gatepass);
-        return view('gatepass.generategatepass',['gatepass'=>$gatepass]);
+        //dd($product);
+       // return view('gatepass.generategatepass',['gatepass'=>$gatepass],['product'=>$product]);
     }
 
     /**

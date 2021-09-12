@@ -14,18 +14,18 @@
 
 <div class="container">
     <div class="row">
-          <div class="col-md-12">
+        <div class="col-md-12">
             <h2>All Gate Pass</h2>
             <a href="{{url('/gatepass')}}" class="btn btn-sm btn-primary float-right">All Gate Pass</a>
             <form class="row g-3" action="{{url('/add-gatepass')}}" method="Post">
                 @csrf
 
-               <div class="col-md-4">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Gatepass No</label>
-                    <input type="text" name="gatepassNo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Gatepass No</label>
+                        <input type="text" name="gatepassNo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                </div></div>
+                    </div></div>
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Company Name</label>
@@ -34,10 +34,10 @@
                     </div></div>
                 <div class="col-md-4">
                     <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Destination</label>
-                    <input type="text" name="destination" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label">Destination</label>
+                        <input type="text" name="destination" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                </div> </div>
+                    </div> </div>
 
 
 
@@ -65,34 +65,34 @@
                     <input type="text" name="employeeId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 </div>
-               <table class="table table-bordered table-responsive">
-                <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                    <th>Purpose</th>
-                    <th><a href="javascript:void(0)" class="btn btn-sm btn-success addRow">+</a></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Purpose</th>
+                        <th><a href="javascript:void(0)" class="btn btn-sm btn-success addRow">+</a></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
 
-                        <input type="text" name="productName[]" class="form-control">
-                    </td>
-                    <td>
+                            <input type="text" name="productName[]" class="form-control">
+                        </td>
+                        <td>
 
-                        <input type="text" name="quantity[]" class="form-control">
-                    </td>
+                            <input type="text" name="quantity[]" class="form-control">
+                        </td>
 
-                    <td>
+                        <td>
 
-                        <textarea class="form-control" name="purpose[]" aria-label="With textarea"></textarea>
-                    </td>
-                    <th><a href="javascript:void(0)" class="btn btn-sm btn-danger deleteRow">-</a></th>
-                </tr>
-                </tbody>
-               </table>
+                            <textarea class="form-control" name="purpose[]" aria-label="With textarea"></textarea>
+                        </td>
+                        <th><a href="javascript:void(0)" class="btn btn-sm btn-danger deleteRow">-</a></th>
+                    </tr>
+                    </tbody>
+                </table>
 
 
 
@@ -116,25 +116,24 @@
 
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
-          </div>
+        </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
-  $('thead').on('click','.addRow',function () {
-          var tr ="<tr>"+
-             "<td><input type='text' name='productName[]' class='form-control'></td>"+
-           "<td><input type='text' name='quantity[]' class='form-control'></td>"+
-           "<td><textarea class='form-control' name='purpose[]'></textarea></td>"+
-              "<th><a href='javascript:void(0)' class='btn btn-sm btn-danger deleteRow'>-</a></th>"+
-           "</tr>"
-
-      $('tbody').append(tr);
-  });
-  $('tbody').on('click','.deleteRow',function () {
-      $(this).parent().parent().remove();
-  });
+    $('thead').on('click','.addRow',function () {
+        var tr ="<tr>"+
+            "<td><input type='text' name='productName[]' class='form-control'></td>"+
+            "<td><input type='text' name='quantity[]' class='form-control'></td>"+
+            "<td><textarea class='form-control' name='purpose[]'></textarea></td>"+
+            "<th><a href='javascript:void(0)' class='btn btn-sm btn-danger deleteRow'>-</a></th>"+
+            "</tr>"
+        $('tbody').append(tr);
+    });
+    $('tbody').on('click','.deleteRow',function () {
+        $(this).parent().parent().remove();
+    });
 </script>
 </body>
 </html>

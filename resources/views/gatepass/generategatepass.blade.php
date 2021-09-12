@@ -72,16 +72,26 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @foreach($data as $row)
 
-                    <tr>
-                        <th scope="row" class="aligncenter">{{$gatepass->gatepassNo}}</th>
+                <tr>
 
-                        <td class="aligncenter">{{$gatepass->product->productName}}</td>
-                        <td class="aligncenter">{{$gatepass->product->quantity}}</td>
-                        <td class="aligncenter"><li>{{$gatepass->product->purpose}}</li></td>
+                    <td class="aligncenter">{{$row->gatepassNo}}</td>
+                    <td class="aligncenter">{{$row->productName}}</td>
+                    <td class="aligncenter">{{$row->quantity}}</td>
+                    <td class="aligncenter"><li>{{$row->purpose}}</li></td>
+                </tr>
 
+                    @endforeach
 
-                    </tr>
+{{--                    <tr>--}}
+
+{{--                        <td class="aligncenter">{{$gatepass->gatepassNo}}</td>--}}
+
+{{--                        <td class="aligncenter">{{$gatepass->product->productName}}</td>--}}
+{{--                        <td class="aligncenter">{{$gatepass->product->quantity}}</td>--}}
+{{--                        <td class="aligncenter"><li>{{$gatepass->product->purpose}}</li></td>--}}
+{{--                    </tr>--}}
 
                 </tbody>
             </table>

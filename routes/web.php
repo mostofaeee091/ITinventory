@@ -13,3 +13,8 @@ Route::post('/add-gatepass',[GatepassController::class,'store'])->name('store');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
